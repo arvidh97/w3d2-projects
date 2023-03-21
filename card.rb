@@ -1,16 +1,12 @@
 class Card 
-
-  def initialize(face_val, face_side)
+  CARDS = [:a,:b,:c,:d,:e,:f,:g,:h]
+  def initialize
     @face_val = face_val
     @face_side = face_side
   end
 
   def card_val
-    if @face_side == false
-      @face_val = nil
-    else  
-      @face_val
-    end
+    @face_val = CARDS.sample
   end
 
   def hide!
@@ -25,7 +21,9 @@ class Card
     @face_val.to_s
   end
 
-  
+  def ==(prev_guess,guess)
+      prev_guess == guess
+  end 
 
 
 end
