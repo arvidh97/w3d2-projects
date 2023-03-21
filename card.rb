@@ -1,6 +1,6 @@
 class Card 
-  CARDS = [:a,:b,:c,:d,:e,:f,:g,:h]
-  def initialize
+  # CARDS = [:a,:b,:c,:d,:e,:f,:g,:h]
+  def initialize(face_val,face_side)
     @face_val = face_val
     @face_side = face_side
   end
@@ -24,6 +24,7 @@ class Card
   def ==(prev_guess,guess)
       prev_guess == guess
   end 
+
 
 
 end
