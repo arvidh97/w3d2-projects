@@ -23,9 +23,11 @@ class Board
 
     def populate
         @cards.each do |card|
-            while @grid.not_full?
-                if @grid[rand(0...@grid.length)][rand(0...grid.length)] == :X
-                     @grid[rand(0...@grid.length)][rand(0...grid.length)] = Card.new(card, false)
+            while not_full?
+                x = rand(0...@grid.length)
+                y = rand(0...@grid.length)
+                if !@grid[x][y].is_a?(Card)
+                     @grid[x][y] = Card.new(card, false)
                 end
             end
         end

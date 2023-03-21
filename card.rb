@@ -17,13 +17,13 @@ class Card
     @face_side = true
   end
 
-  def to_s #may be wrong 
-    @face_val
-  end
+  # def to_s #may be wrong 
+    
+  # end
 
-  def ==(prev_guess,guess)
-      prev_guess == guess
-  end 
+  # def ==(prev_guess,guess)
+  #     prev_guess == guess
+  # end 
 
 
 
