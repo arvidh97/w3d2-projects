@@ -17,20 +17,17 @@ class Board
         @grid[row][col] = val
     end
 
-    def not_full?
-        @grid.flatten.include?(:X)
-    end
-
     def populate
-        @cards.each do |card|
-            while not_full?
-                x = rand(0...@grid.length)
-                y = rand(0...@grid.length)
-                if !@grid[x][y].is_a?(Card)
-                     @grid[x][y] = Card.new(card, false)
-                end
+        shuffled_cards = @cards.shuffle
+        @grid.each do |subarr| 
+            subarr.each_with_index do |ele, i| 
+                subarr[i] = shuffled_cards.pop 
             end
         end
+    end
+
+    def hidden_grid
+        new_arr = Array.new(@grid.length) {Array.new(@grid.length, :X)}
     end
 
     def render
@@ -50,7 +47,7 @@ class Board
 
     def reveal(guess)
         if @grid[guess]==:X
-            @grid[guess].reveal #@grid[guess] == card instance
+            @grid[guess].reveal!#@grid[guess] == card instance
         end
     end
 end
