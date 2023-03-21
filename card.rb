@@ -5,9 +5,9 @@ class Card
     @face_side = face_side
   end
 
-  def card_val
-    @face_val = CARDS.sample
-  end
+  # def card_val
+  #   @face_val = CARDS.sample
+  # end
 
   def hide!
     @face_side = false
@@ -18,7 +18,7 @@ class Card
   end
 
   def to_s #may be wrong 
-    @face_val.to_s
+    @face_val
   end
 
   def ==(prev_guess,guess)
