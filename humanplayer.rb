@@ -1,11 +1,6 @@
 class HumanPlayer
-    def initialize
-        @input = input
-    end
-
     def prompt
-        puts "enter positions for the card you'd like to flip."
-        input = gets.chomp.to_a
+        puts "put 2 num in brackets ie [1,2]"
+        input = gets.chomp
     end
-
 end

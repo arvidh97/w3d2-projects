@@ -4,6 +4,7 @@ class Board
     
     def initialize
         @grid= Array.new(4) {Array.new(4,:X)}
+        @hidden_grid = Array.new(@grid.length) {Array.new(@grid.length, :X)}
         @cards = [:a,:b,:c,:d,:e,:f,:g,:h,:a,:b,:c,:d,:e,:f,:g,:h]
     end
 
@@ -26,18 +27,14 @@ class Board
         end
     end
 
-    def hidden_grid
-        new_arr = Array.new(@grid.length) {Array.new(@grid.length, :X)}
-    end
-
     def render
-        @grid.each do |subarr|
+        @hidden_grid.each do |subarr|
             puts subarr.join(" ")
         end
     end
 
     def won?
-        @grid.each do |subarr|
+        hidden_grid.each do |subarr|
             subarr.each do |ele| 
                 return false if ele == :X
             end
